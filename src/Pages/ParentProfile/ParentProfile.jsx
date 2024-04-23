@@ -31,9 +31,7 @@ import Head from "./../../Components/Head/Head";
 
 const ParentProfile = () => {
  
-   const api = axios.create({
-     baseURL: process.env.REACT_APP_API_URL, // Replace with your environment variable name
-   });
+  
   // Simulated data and initial state
 
   const parentProfileDetails = [
@@ -148,6 +146,10 @@ const ParentProfile = () => {
   const [loadingb, setLoading] = useState(false);
   const [billingHistoryData, setBillingHistoryData] = useState();
 
+   const api = axios.create({
+     baseURL: process.env.REACT_APP_API_URL, // Replace with your environment variable name
+   });
+
   React.useEffect(() => {
     const fetchBillingHistory = async () => {
       if (user?.user?.children) {
@@ -162,7 +164,7 @@ const ParentProfile = () => {
           const childIds = user?.user?.children?.map((child) => child._id);
           const promises = childIds.map(async (childId) => {
             try {
-              const response = await axios.post(
+              const response = await api.post(
                 "/api/billing/billing/history",
                 { childIds: childIds },
                 { headers }
