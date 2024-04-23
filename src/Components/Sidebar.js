@@ -34,7 +34,7 @@ const Sidebar = ({ showSection, data, activeSection }) => {
 
           {data?.map((item, index) => (
             <div className={`mt-${index === 0 ? "5" : "0"} hey`} key={item.id}>
-              <Link onClick={() => showSection(item.section)}>
+              <Link onClick={() => showSection(item.section)} to={item.section==="learn" && "/learn"}>
                 <div className="sidebar-content d-flex align-items-center justify-content-center">
                   <div className="d-flex side align-items-center ">
                     <span

@@ -46,6 +46,7 @@ const SmallSidebar = ({ showSection, data, activeSection }) => {
               {data?.map((item, index) => (
                 <Link
                   onClick={() => showSection(item.section)}
+                  to={item.section === "learn" && "/learn"}
                   className="side"
                 >
                   <div

@@ -164,7 +164,7 @@ function AppContent() {
               }
             />
             <Route
-              path="/alphabet"
+              path="/learn"
               element={
                 <PrivateRouterChild>
                   <Suspense fallback={<LazyLoading />}>

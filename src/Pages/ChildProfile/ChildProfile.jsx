@@ -28,6 +28,7 @@ import ChildParent from "../../Components/ChildParent";
 import Billing from "../../Components/Billing";
 import SmallSidebar from "../../Components/SmallSidebar";
 import Head from './../../Components/Head/Head';
+import Alphabet from './../Alphabet/Alphabet';
 const ChildProfile = () => {
   const childProfileDetails = [
     {
@@ -36,6 +37,13 @@ const ChildProfile = () => {
       icon: <FaUserSecret />,
       path: "/profile",
       section: "contact",
+    },
+    {
+      id: "learn",
+      label: "Learn",
+      icon: <FaUserSecret />,
+      path: "/profile",
+      section: "learn",
     },
     {
       id: "parent",
@@ -319,6 +327,13 @@ const ChildProfile = () => {
                 }}
               >
                 <ChildParent user={user} />
+              </section>
+              <section
+                style={{
+                  display: activeSection === "learn" ? "block" : "none",
+                }}
+              >
+                <Alphabet  />
               </section>
               <section
                 style={{
